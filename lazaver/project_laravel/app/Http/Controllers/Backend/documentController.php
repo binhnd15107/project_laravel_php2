@@ -30,11 +30,11 @@ class documentController extends Controller
 
     public function add_img()
     {
-        $contents= collect(Storage::disk('google')->listContents('/',false)) 
+        $contents= collect(Storage::disk('google')->listContents('/',false))
         -> where('type','!=','dir');
-       
+
         return view('backend.googleDrive.addFileImg',['contents'=>$contents]);
-        
+
     }
     public function store_img(Request $request)
     {

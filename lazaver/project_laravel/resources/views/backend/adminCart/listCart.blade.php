@@ -104,12 +104,12 @@
 @stop();
 @section('js')
 <script>
-   function showintro(id){
- $(function() {
-        // var introUser = document.querySelectorAll('.introUser')
-                $('#introUser'+id).toggle(100)
-    })
-   }
+    function showintro(id) {
+        $(function() {
+            // var introUser = document.querySelectorAll('.introUser')
+            $('#introUser' + id).toggle(100)
+        })
+    }
 </script>
 <script>
     $('.deleteCate').click(function(ev) {

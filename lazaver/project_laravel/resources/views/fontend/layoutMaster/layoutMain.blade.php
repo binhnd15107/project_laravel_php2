@@ -271,7 +271,7 @@
     </div>
     @endif
     <!-- JavaScript Bundle with Popper -->
-  
+
 
     <script src="{{url('public/backend')}}/vendor/jquery/jquery.min.js"></script>
     <script src="{{url('public/backend')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -315,7 +315,7 @@
             ?>
         });
     </script>
-    
+
     @yield('js')
 </body>
 

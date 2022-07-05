@@ -93,7 +93,6 @@ class adminProducts extends Controller
         // dd($request->all());
         if (Products::create($request->all())) {
             $last_inserted_id = Products::orderBy('id', 'DESC')->get();
-
             if ($request->hasFile('fileUpdates')) {
                 $files = $request->file('fileUpdates');
                 for ($i = 0; $i < count($files); $i++) {
@@ -208,7 +207,7 @@ class adminProducts extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Products 
+     * @param  \App\Models\Products
      * @return \Illuminate\Http\Response
      */
     public function destroy($products, Products $pro)

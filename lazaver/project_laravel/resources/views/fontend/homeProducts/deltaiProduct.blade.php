@@ -228,7 +228,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
 
                         </div>
-  
+
                         @endif
                         <div class="formRep" style="display:none;margin-top:10px">
                             <form action="">
@@ -260,7 +260,6 @@ use Illuminate\Support\Facades\DB as FacadesDB;
                         <div class="imgProducts">
                             <img class="logoNew" style="width:45px;height: 45px;" src="{{url('public/backend/img')}}/New-Logo.png" alt="">
                             <a href=""><img style="width: 290px;" class="id_img" src="{{url('public/backend/img')}}/{{$valueWhere->img_produc}}" alt=""></a>
-
                             <div id="bong_img" class="bong_img">
 
                                 <a class="love {{$valueWhere->id}}" href="{{route('trangchu.sanpham.yeuthich',['idPro'=>$valueWhere->id])}}"> <i id="heart" class="far fa-heart"></i></a>
@@ -294,8 +293,6 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 @section('js')
 <script src="{{url('public/backend')}}/js/deltai.js"></script>
 <script>
-    
-     
    function showRep(id){
        $(function(){
            $('#dataRepComment'+id).toggle(100)
@@ -311,16 +308,16 @@ use Illuminate\Support\Facades\DB as FacadesDB;
         var dataRepComment = document.querySelectorAll('.dataRepComment');
 
 console.log(numberComment)
- 
 
 
-     
+
+
         for (let index = 0; index < submitRepComment.length; index++) {
             submitRepComment[index].onclick = function() {
                 formRep[index].style.display = "block"
                 btn_repComment[index].onclick = function(e) {
                     e.preventDefault();
-                  
+
                     var UrlSubmit = "{{route('trangchu.sanpham.repComment')}}"
                     var _token = $("input[name='_token']").val();
                     $.ajax({
@@ -337,7 +334,7 @@ console.log(numberComment)
                             dataRepComment[index].style.display="block"
                         }
                     })
-               
+
                 }
             }
 
@@ -412,7 +409,7 @@ console.log(numberComment)
 <script>
     var btnSubmit = document.querySelector('#btn-submit');
     $(document).ready(function() {
-       
+
         var url = "{{route('trangchu.sanpham.comments',['idPro'=>$dataDeltaiPro->id])}}";
         btnSubmit.onclick = function(e) {
 
@@ -422,7 +419,6 @@ console.log(numberComment)
             var comment = $("textarea[name='comment']").val();
             $.ajax({
                 url: url,
-
                 data: {
                     _token: _token,
                     comment: comment
